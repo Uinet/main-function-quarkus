@@ -28,13 +28,12 @@ public class Function implements RequestHandler <APIGatewayProxyRequestEvent, AP
     }
 
     private static PutItemRequest buildPutItemRequest(APIGatewayProxyRequestEvent event ) {
-        PutItemRequest itemRequest = PutItemRequest
+
+        return PutItemRequest
                 .builder()
                 .tableName(TABLE_NAME)
                 .item(Map.of("id", AttributeValue.fromS(event.getBody())))
                 .build();
-
-        return itemRequest;
     }
 
 }
