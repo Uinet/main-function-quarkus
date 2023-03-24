@@ -9,10 +9,8 @@ import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 import software.amazon.awssdk.services.dynamodb.model.PutItemRequest;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 import java.util.Map;
 
-@Named("Quarkus-main")
 public class Function implements RequestHandler <APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent > {
 
     @Inject
@@ -30,7 +28,6 @@ public class Function implements RequestHandler <APIGatewayProxyRequestEvent, AP
     }
 
     private static PutItemRequest buildPutItemRequest(APIGatewayProxyRequestEvent event ) {
-        ;
         PutItemRequest itemRequest = PutItemRequest
                 .builder()
                 .tableName(TABLE_NAME)
